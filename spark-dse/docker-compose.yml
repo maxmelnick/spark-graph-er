@@ -1,0 +1,35 @@
+version: '3'
+
+# docker-compose adapted from http://www.luketillman.com/datastax-graph-and-studio-with-docker-compose/
+networks:
+  graph:
+    external: true
+
+services:
+  dse:
+    image: "datastax/dse-server:6.7.2"
+    command: -g # start analytics/spark mode (-k) and graph (-g)
+    working_dir: /code
+    environment:
+      - DS_LICENSE=accept
+    # Allow DSE to lock memory with mlock
+    cap_add:
+    - IPC_LOCK
+    ulimits:
+      memlock: -1
+    ports:
+    - 9042:9042
+    - 4040:4040 # spark app UI port
+    - 7080:7080 # spark master UI port
+    - 7081:7081 # alternate spark master UI port
+    networks:
+    - graph
+    container_name: dse
+  dse-studio:
+    image: "datastax/dse-studio:6.7.0"
+    environment:
+      - DS_LICENSE=accept
+    ports:
+      - 9091:9091
+    networks:
+      - graph
