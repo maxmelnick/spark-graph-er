@@ -1,6 +1,6 @@
 # Entity Resolution (ER) Using Spark + Graph
 
-This repository contains complementary code for a talk I gave at Spark Summit 2019 on [*Massive-Scale Entity Resolution Using Spark + Graph*](https://databricks.com/session/massive-scale-entity-resolution-using-the-power-of-apache-spark-and-graph). There are simple code examples you can use with Spark to improve your ER, as well as some code examples that will help you better understand how to work with graph in Spark.
+This repository contains complementary code for a talk I gave at Spark Summit 2019 on [*Massive-Scale Entity Resolution Using Spark + Graph*](https://databricks.com/session/massive-scale-entity-resolution-using-the-power-of-apache-spark-and-graph). These are simple code examples you can use with Spark to improve your ER, as well as some code examples that will help you better understand how to work with graph in Spark.
 
 There are two sub-projects due to some incompatabilities across associated dependencies. Please refer to the associated README.md in the sub-projects for how to run the examples.
 
